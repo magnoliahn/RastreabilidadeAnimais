@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Adicione estas linhas para melhor controle de qualidade -->
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<!-- Gera XML docs para Swagger -->
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<!-- Trata warnings como erros -->
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Nullable>enable</Nullable>
+		<WarningsAsErrors>nullable</WarningsAsErrors>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- Dependências principais -->
+		<PackageReference Include="FluentValidation" Version="11.11.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.4" />
+
+		<!-- Agrupe dependências relacionadas -->
+		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.4" Condition="'$(Configuration)' == 'Debug'" />
+		<!-- Só em Debug -->
+
+		<!-- Ferramentas de desenvolvimento (não afetam o build) -->
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" PrivateAssets="all" />
+		<!-- Não propaga para dependências -->
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,240 @@
+[
+  {
+    "ContainingType": "rastreabilidadeAnimais.Controllers.SaidaAnimaisController",
+    "Method": "GetAll",
+    "RelativePath": "api/SaidaAnimais",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[rastreabilidadeAnimais.DTOs.SaidaAnimaisDTO, rastreabilidadeAnimais, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "rastreabilidadeAnimais.Controllers.SaidaAnimaisController",
+    "Method": "Create",
+    "RelativePath": "api/SaidaAnimais",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "rastreabilidadeAnimais.DTOs.CreateSaidaAnimaisDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "rastreabilidadeAnimais.DTOs.SaidaAnimaisDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "rastreabilidadeAnimais.Controllers.SaidaAnimaisController",
+    "Method": "GetById",
+    "RelativePath": "api/SaidaAnimais/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "rastreabilidadeAnimais.DTOs.SaidaAnimaisDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "rastreabilidadeAnimais.Controllers.SaidaAnimaisController",
+    "Method": "Update",
+    "RelativePath": "api/SaidaAnimais/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "rastreabilidadeAnimais.DTOs.UpdateSaidaAnimaisDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "rastreabilidadeAnimais.DTOs.SaidaAnimaisDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "rastreabilidadeAnimais.Controllers.SaidaAnimaisController",
+    "Method": "Delete",
+    "RelativePath": "api/SaidaAnimais/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "rastreabilidadeAnimais.Controllers.UnidadeExploracaoController",
+    "Method": "GetAll",
+    "RelativePath": "api/UnidadeExploracao",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[rastreabilidadeAnimais.DTOs.UnidadeExploracaoDTO, rastreabilidadeAnimais, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "rastreabilidadeAnimais.Controllers.UnidadeExploracaoController",
+    "Method": "Create",
+    "RelativePath": "api/UnidadeExploracao",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "rastreabilidadeAnimais.DTOs.CreateUnidadeExploracaoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "rastreabilidadeAnimais.DTOs.UnidadeExploracaoDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "rastreabilidadeAnimais.Controllers.UnidadeExploracaoController",
+    "Method": "GetById",
+    "RelativePath": "api/UnidadeExploracao/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "rastreabilidadeAnimais.DTOs.UnidadeExploracaoDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "rastreabilidadeAnimais.Controllers.UnidadeExploracaoController",
+    "Method": "UpdateQuantidade",
+    "RelativePath": "api/UnidadeExploracao/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "rastreabilidadeAnimais.DTOs.UpdateUnidadeExploracaoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "rastreabilidadeAnimais.DTOs.UnidadeExploracaoDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "rastreabilidadeAnimais.Controllers.UnidadeExploracaoController",
+    "Method": "Delete",
+    "RelativePath": "api/UnidadeExploracao/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

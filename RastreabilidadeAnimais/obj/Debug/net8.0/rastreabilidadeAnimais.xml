@@ -1,0 +1,576 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>rastreabilidadeAnimais</name>
+    </assembly>
+    <members>
+        <member name="T:rastreabilidadeAnimais.Controllers.SaidaAnimaisController">
+            <summary>
+            Controller que gerencia as saidas de animais
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Controllers.SaidaAnimaisController.#ctor(rastreabilidadeAnimais.Services.Interfaces.ISaidaAnimaisService,FluentValidation.IValidator{rastreabilidadeAnimais.DTOs.CreateSaidaAnimaisDTO},FluentValidation.IValidator{rastreabilidadeAnimais.DTOs.UpdateSaidaAnimaisDTO})">
+            <summary>
+            Construtor com injeção de dependências
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Controllers.SaidaAnimaisController.GetAll">
+            <summary>
+            Endpoint GET que obtem todas as saídas de animais
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Controllers.SaidaAnimaisController.GetById(System.Int32)">
+            <summary>
+            Endpoint GET que obtem saída por um id especifico 
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Controllers.SaidaAnimaisController.Create(rastreabilidadeAnimais.DTOs.CreateSaidaAnimaisDTO)">
+            <summary>
+            Endpoint POST cria uma nova saída de animal
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Controllers.SaidaAnimaisController.Update(System.Int32,rastreabilidadeAnimais.DTOs.UpdateSaidaAnimaisDTO)">
+            <summary>
+            Endpoint PUT para atualizar uma saída 
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Controllers.SaidaAnimaisController.Delete(System.Int32)">
+            <summary>
+            Endpoint DELETE para remover uma saída
+            </summary>
+        </member>
+        <member name="T:rastreabilidadeAnimais.Controllers.UnidadeExploracaoController">
+            <summary>
+            Controller para gerenciar unidades de exploração 
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Controllers.UnidadeExploracaoController.#ctor(rastreabilidadeAnimais.Services.Interfaces.IUnidadeExploracaoService,FluentValidation.IValidator{rastreabilidadeAnimais.DTOs.CreateUnidadeExploracaoDTO},FluentValidation.IValidator{rastreabilidadeAnimais.DTOs.UpdateUnidadeExploracaoDTO})">
+            <summary>
+            Construtor com injeção de dependências
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Controllers.UnidadeExploracaoController.GetAll">
+            <summary>
+            Obtém todas as unidades de exploração registradas
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Controllers.UnidadeExploracaoController.GetById(System.Int32)">
+            <summary>
+            Obtém uma unidade de exploração especifica por ID
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Controllers.UnidadeExploracaoController.Create(rastreabilidadeAnimais.DTOs.CreateUnidadeExploracaoDTO)">
+            <summary>
+            Cria uma nova unidade de exploração
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Controllers.UnidadeExploracaoController.UpdateQuantidade(System.Int32,rastreabilidadeAnimais.DTOs.UpdateUnidadeExploracaoDTO)">
+            <summary>
+            Atualiza a quantidade de uma unidade de exploração pleo ID
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Controllers.UnidadeExploracaoController.Delete(System.Int32)">
+            <summary>
+            Remove uma unidade de exploração pelo ID
+            </summary>
+        </member>
+        <member name="T:rastreabilidadeAnimais.Data.ApplicationDbContext">
+            <summary>
+            Classe principal que representa o contexto do banco de dados na aplicação.
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Data.ApplicationDbContext.#ctor">
+            <summary>
+            Construtor sem parâmetros para testes unitários
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Data.ApplicationDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{rastreabilidadeAnimais.Data.ApplicationDbContext})">
+            <summary>
+            Construtor principal que recebe as opções de configuração
+            </summary>
+        </member>
+        <member name="P:rastreabilidadeAnimais.Data.ApplicationDbContext.Especies">
+            DbSet da tabela espécie
+        </member>
+        <member name="P:rastreabilidadeAnimais.Data.ApplicationDbContext.UnidadesExploracao">
+            DbSet da tabela Unidades de Exploração
+        </member>
+        <member name="P:rastreabilidadeAnimais.Data.ApplicationDbContext.SaidasAnimais">
+            DbSet da tabela Saídas de Animais
+        </member>
+        <member name="M:rastreabilidadeAnimais.Data.ApplicationDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Fluent API para configuração dos models
+            </summary>
+        </member>
+        <member name="T:rastreabilidadeAnimais.Data.DbInitializer">
+            <summary>
+            Classe estática responsável pela inicialização do banco de dados em memória
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Data.DbInitializer.Initialize(rastreabilidadeAnimais.Data.ApplicationDbContext)">
+            <summary>
+            Método principal que popula as tabelas com dados iniciais
+            </summary>
+        </member>
+        <member name="T:rastreabilidadeAnimais.DTOs.SaidaAnimaisDTO">
+            <summary>
+            DTO completo para representação de saída de animais
+            </summary>
+        </member>
+        <member name="P:rastreabilidadeAnimais.DTOs.SaidaAnimaisDTO.Id">
+            ID do registro de saída
+        </member>
+        <member name="P:rastreabilidadeAnimais.DTOs.SaidaAnimaisDTO.DataSaida">
+            Data e hora em que ocorreu a saída dos animais
+        </member>
+        <member name="P:rastreabilidadeAnimais.DTOs.SaidaAnimaisDTO.CodigoUepOrigem">
+            Código da Unidade de Exploração Pecuária de origem
+        </member>
+        <member name="P:rastreabilidadeAnimais.DTOs.SaidaAnimaisDTO.CodigoUepDestino">
+            Código da Unidade de Exploração Pecuária  de destino
+        </member>
+        <member name="P:rastreabilidadeAnimais.DTOs.SaidaAnimaisDTO.QuantidadeAnimais">
+            Quantidade total que sairam
+        </member>
+        <member name="P:rastreabilidadeAnimais.DTOs.SaidaAnimaisDTO.NomeEspecieOrigem">
+            Nome da espécie animal na unidade de origem
+        </member>
+        <member name="P:rastreabilidadeAnimais.DTOs.SaidaAnimaisDTO.NomeEspecieDestino">
+            Nome da espécie animal na unidade de destino
+        </member>
+        <member name="T:rastreabilidadeAnimais.DTOs.CreateSaidaAnimaisDTO">
+            <summary>
+            DTO para criação de novos registros de saída de animais
+            </summary>
+        </member>
+        <member name="P:rastreabilidadeAnimais.DTOs.CreateSaidaAnimaisDTO.DataSaida">
+            Data e hora em que ocorreu a saída dos animais
+        </member>
+        <member name="P:rastreabilidadeAnimais.DTOs.CreateSaidaAnimaisDTO.CodigoUepOrigem">
+            Código da UEP de origem
+        </member>
+        <member name="P:rastreabilidadeAnimais.DTOs.CreateSaidaAnimaisDTO.CodigoUepDestino">
+            Código da UEP de destino
+        </member>
+        <member name="P:rastreabilidadeAnimais.DTOs.CreateSaidaAnimaisDTO.QuantidadeAnimais">
+            Quantidade de animais transferidos
+        </member>
+        <member name="T:rastreabilidadeAnimais.DTOs.UpdateSaidaAnimaisDTO">
+            DTO para atualização de registros existentes de saída de animais
+        </member>
+        <member name="P:rastreabilidadeAnimais.DTOs.UpdateSaidaAnimaisDTO.DataSaida">
+            Nova data para a saída dos animais
+        </member>
+        <member name="P:rastreabilidadeAnimais.DTOs.UpdateSaidaAnimaisDTO.QuantidadeAnimais">
+            Nova quantidade de animais
+        </member>
+        <member name="T:rastreabilidadeAnimais.DTOs.UnidadeExploracaoDTO">
+            <summary>
+            DTO completo para representação de uma Unidade de Exploração
+            </summary>
+        </member>
+        <member name="P:rastreabilidadeAnimais.DTOs.UnidadeExploracaoDTO.Id">
+            ID da unidade de exploração
+        </member>
+        <member name="P:rastreabilidadeAnimais.DTOs.UnidadeExploracaoDTO.CodigoEspecie">
+            Código da espécie
+        </member>
+        <member name="P:rastreabilidadeAnimais.DTOs.UnidadeExploracaoDTO.QuantidadeAnimais">
+            Quantidade total de animais na UEP
+        </member>
+        <member name="P:rastreabilidadeAnimais.DTOs.UnidadeExploracaoDTO.CodigoPropriedade">
+            Código da propriedade
+        </member>
+        <member name="P:rastreabilidadeAnimais.DTOs.UnidadeExploracaoDTO.NomeEspecie">
+            Nome da espécie animal 
+        </member>
+        <member name="T:rastreabilidadeAnimais.DTOs.CreateUnidadeExploracaoDTO">
+            <summary>
+            DTO para criação de novas unidades de exploração
+            </summary>
+        </member>
+        <member name="P:rastreabilidadeAnimais.DTOs.CreateUnidadeExploracaoDTO.CodigoEspecie">
+            Código da espécie animal inicial 
+        </member>
+        <member name="P:rastreabilidadeAnimais.DTOs.CreateUnidadeExploracaoDTO.QuantidadeAnimais">
+            Quantidade inicial de animais
+        </member>
+        <member name="P:rastreabilidadeAnimais.DTOs.CreateUnidadeExploracaoDTO.CodigoPropriedade">
+            Código da propriedade 
+        </member>
+        <member name="T:rastreabilidadeAnimais.DTOs.UpdateUnidadeExploracaoDTO">
+            <summary>
+            DTO para atualização de unidades de exploração existentes
+            </summary>
+        </member>
+        <member name="P:rastreabilidadeAnimais.DTOs.UpdateUnidadeExploracaoDTO.QuantidadeAnimais">
+            Nova quantidade de animais na unidade
+        </member>
+        <member name="T:rastreabilidadeAnimais.Models.Especie">
+            Classe que representa uma especie no sistema
+        </member>
+        <member name="P:rastreabilidadeAnimais.Models.Especie.Id">
+            ID da especie
+        </member>
+        <member name="P:rastreabilidadeAnimais.Models.Especie.Nome">
+            Nome da especie
+        </member>
+        <member name="T:rastreabilidadeAnimais.Models.SaidaAnimais">
+            <summary>
+             Classe que representa uma saida no sistema
+            </summary>
+        </member>
+        <member name="P:rastreabilidadeAnimais.Models.SaidaAnimais.Id">
+            ID da saida
+        </member>
+        <member name="P:rastreabilidadeAnimais.Models.SaidaAnimais.DataSaida">
+            Obtém data e hora da saida
+        </member>
+        <member name="P:rastreabilidadeAnimais.Models.SaidaAnimais.CodigoUepOrigem">
+            Obtém o codigo da unidade de origem
+        </member>
+        <member name="P:rastreabilidadeAnimais.Models.SaidaAnimais.CodigoUepDestino">
+            Obtém o codigo da unidade de destino
+        </member>
+        <member name="P:rastreabilidadeAnimais.Models.SaidaAnimais.QuantidadeAnimais">
+            Obtém a quantidade de animais que estão saindo
+        </member>
+        <member name="P:rastreabilidadeAnimais.Models.SaidaAnimais.UepOrigem">
+            <summary>
+            Propriedade de navegação para a Unidade de Exploração de origem
+            </summary>
+        </member>
+        <member name="P:rastreabilidadeAnimais.Models.SaidaAnimais.UepDestino">
+            <summary>
+            Propriedade de navegação para a Unidade de Exploração de destino
+            </summary>
+        </member>
+        <member name="T:rastreabilidadeAnimais.Models.UnidadeExploracao">
+            <summary>
+             Classe que representa uma saida no sistema
+            </summary>
+        </member>
+        <member name="P:rastreabilidadeAnimais.Models.UnidadeExploracao.Id">
+            ID da unidade
+        </member>
+        <member name="P:rastreabilidadeAnimais.Models.UnidadeExploracao.CodigoEspecie">
+            Cdigo da especie animal predominante
+        </member>
+        <member name="P:rastreabilidadeAnimais.Models.UnidadeExploracao.QuantidadeAnimais">
+            Quantidade de animais na unidade
+        </member>
+        <member name="P:rastreabilidadeAnimais.Models.UnidadeExploracao.CodigoPropriedade">
+            Codigo da propriedade UEP
+        </member>
+        <member name="P:rastreabilidadeAnimais.Models.UnidadeExploracao.Especie">
+            <summary>
+            Espécie animal associada à unidade de exploração
+            Relacionamento configurado via chave estrangeira CodigoEspecie
+            </summary>
+        </member>
+        <member name="P:rastreabilidadeAnimais.Models.UnidadeExploracao.SaidasOriginadas">
+            <summary>
+            Lista de saídas de animais que tiveram origem nesta unidade
+            </summary>
+        </member>
+        <member name="P:rastreabilidadeAnimais.Models.UnidadeExploracao.SaidasDestinadas">
+            <summary>
+            Lista de saídas de animais que tiveram esta unidade como destino 
+            </summary>
+        </member>
+        <member name="T:rastreabilidadeAnimais.Repositories.Interfaces.ISaidaAnimaisRepository">
+            <summary>
+            Interface que define o contrato para operações de persistência de registros de saída de animais
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Repositories.Interfaces.ISaidaAnimaisRepository.GetAllAsync">
+            Obtém todos os registros de saída de animais 
+        </member>
+        <member name="M:rastreabilidadeAnimais.Repositories.Interfaces.ISaidaAnimaisRepository.GetByIdAsync(System.Int32)">
+            Obtém um registro específico de saída de animais pelo ID 
+        </member>
+        <member name="M:rastreabilidadeAnimais.Repositories.Interfaces.ISaidaAnimaisRepository.CreateAsync(rastreabilidadeAnimais.Models.SaidaAnimais)">
+            Cria um novo registro de saída de animais 
+        </member>
+        <member name="M:rastreabilidadeAnimais.Repositories.Interfaces.ISaidaAnimaisRepository.UpdateAsync(rastreabilidadeAnimais.Models.SaidaAnimais)">
+            Atualiza um registro existente de saída de animais 
+        </member>
+        <member name="M:rastreabilidadeAnimais.Repositories.Interfaces.ISaidaAnimaisRepository.DeleteAsync(System.Int32)">
+            Remove um registro de saída de animais pelo ID 
+        </member>
+        <member name="T:rastreabilidadeAnimais.Repositories.Interfaces.IUnidadeExploracaoRepository">
+            <summary>
+            Interface que define o contrato para operações de persistência das UEP
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Repositories.Interfaces.IUnidadeExploracaoRepository.GetAllAsync">
+            Obtém todas as unidades de exploração cadastradas
+        </member>
+        <member name="M:rastreabilidadeAnimais.Repositories.Interfaces.IUnidadeExploracaoRepository.GetByIdAsync(System.Int32)">
+            Obtém uma unidade de exploração específica pelo ID
+        </member>
+        <member name="M:rastreabilidadeAnimais.Repositories.Interfaces.IUnidadeExploracaoRepository.CreateAsync(rastreabilidadeAnimais.Models.UnidadeExploracao)">
+            Cria uma nova UEP no repositório
+        </member>
+        <member name="M:rastreabilidadeAnimais.Repositories.Interfaces.IUnidadeExploracaoRepository.UpdateAsync(rastreabilidadeAnimais.Models.UnidadeExploracao)">
+            Atualiza os dados de uma UEP existente
+        </member>
+        <member name="M:rastreabilidadeAnimais.Repositories.Interfaces.IUnidadeExploracaoRepository.DeleteAsync(System.Int32)">
+            Remove uma UEP pelo ID
+        </member>
+        <member name="T:rastreabilidadeAnimais.Repositories.SaidaAnimaisRepository">
+            <summary>
+            Implementação do repositório para operações de saída de animais
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Repositories.SaidaAnimaisRepository.#ctor(rastreabilidadeAnimais.Data.ApplicationDbContext)">
+            <summary>
+            Construtor que recebe o contexto via injeção de dependência
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Repositories.SaidaAnimaisRepository.GetAllAsync">
+            <summary>
+            Obtém todas as saídas de animais com seus relacionamentos carregados
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Repositories.SaidaAnimaisRepository.GetByIdAsync(System.Int32)">
+            <summary>
+            Obtém uma saída específica pelo ID com todos os relacionamentos
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Repositories.SaidaAnimaisRepository.CreateAsync(rastreabilidadeAnimais.Models.SaidaAnimais)">
+            <summary>
+            Cria um novo registro de saída de animais
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Repositories.SaidaAnimaisRepository.UpdateAsync(rastreabilidadeAnimais.Models.SaidaAnimais)">
+            <summary>
+            Atualiza um registro existente de saída de animais
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Repositories.SaidaAnimaisRepository.DeleteAsync(System.Int32)">
+            <summary>
+            Remove uma saída de animais pelo ID
+            </summary>
+        </member>
+        <member name="T:rastreabilidadeAnimais.Repositories.UnidadeExploracaoRepository">
+            <summary>
+            Implementação do repositório para operações com UEP
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Repositories.UnidadeExploracaoRepository.#ctor(rastreabilidadeAnimais.Data.ApplicationDbContext)">
+            Construtor que inicializa o contexto 
+        </member>
+        <member name="M:rastreabilidadeAnimais.Repositories.UnidadeExploracaoRepository.GetAllAsync">
+            <summary>
+            Obtém todas as unidades de exploração cadastradas
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Repositories.UnidadeExploracaoRepository.GetByIdAsync(System.Int32)">
+            <summary>
+            Obtém uma unidade de exploração específica pelo ID
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Repositories.UnidadeExploracaoRepository.CreateAsync(rastreabilidadeAnimais.Models.UnidadeExploracao)">
+            <summary>
+            Cria uma nova unidade de exploração
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Repositories.UnidadeExploracaoRepository.UpdateAsync(rastreabilidadeAnimais.Models.UnidadeExploracao)">
+            <summary>
+            Atualiza os dados de uma unidade de exploração existente
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Repositories.UnidadeExploracaoRepository.DeleteAsync(System.Int32)">
+            <summary>
+            Remove uma unidade de exploração pelo ID
+            </summary>
+        </member>
+        <member name="T:rastreabilidadeAnimais.Services.Interfaces.ISaidaAnimaisService">
+            <summary>
+            Interface que define o contrato de saídas de animais
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.Interfaces.ISaidaAnimaisService.GetAllAsync">
+            <summary>
+            Obtém todas as saídas de animais registradas no sistema
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.Interfaces.ISaidaAnimaisService.GetByIdAsync(System.Int32)">
+            <summary>
+            Obtém uma saída de animais específica pelo seu identificador
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.Interfaces.ISaidaAnimaisService.CreateAsync(rastreabilidadeAnimais.DTOs.CreateSaidaAnimaisDTO)">
+            <summary>
+            Cria uma nova saída de animais no sistema
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.Interfaces.ISaidaAnimaisService.UpdateAsync(System.Int32,rastreabilidadeAnimais.DTOs.UpdateSaidaAnimaisDTO)">
+            <summary>
+            Atualiza os dados de uma saída de animais existente
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.Interfaces.ISaidaAnimaisService.DeleteAsync(System.Int32)">
+            <summary>
+            Remove um registro de saída de animais do sistema
+            </summary>
+        </member>
+        <member name="T:rastreabilidadeAnimais.Services.Interfaces.IUnidadeExploracaoService">
+            <summary>
+            Interface que define o contrato para gestão das UEP
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.Interfaces.IUnidadeExploracaoService.GetAllAsync">
+            <summary>
+            Obtém todas as unidades de exploração cadastradas
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.Interfaces.IUnidadeExploracaoService.GetByIdAsync(System.Int32)">
+            <summary>
+            Obtém uma unidade de exploração específica pelo seu identificador
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.Interfaces.IUnidadeExploracaoService.CreateAsync(rastreabilidadeAnimais.DTOs.CreateUnidadeExploracaoDTO)">
+            <summary>
+            Cria uma nova unidade de exploração no sistema
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.Interfaces.IUnidadeExploracaoService.UpdateQuantidadeAsync(System.Int32,rastreabilidadeAnimais.DTOs.UpdateUnidadeExploracaoDTO)">
+            <summary>
+            Atualiza a quantidade de animais de uma unidade de exploração existente
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.Interfaces.IUnidadeExploracaoService.DeleteAsync(System.Int32)">
+            <summary>
+            Remove uma unidade de exploração do sistema
+            </summary>
+        </member>
+        <member name="T:rastreabilidadeAnimais.Services.SaidaAnimaisService">
+            <summary>
+            Serviço para gestão de saídas de animais entre as UEP
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.SaidaAnimaisService.#ctor(rastreabilidadeAnimais.Repositories.Interfaces.ISaidaAnimaisRepository,rastreabilidadeAnimais.Repositories.Interfaces.IUnidadeExploracaoRepository,rastreabilidadeAnimais.Data.ApplicationDbContext)">
+            <summary>
+            Construtor com injeção de dependências
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.SaidaAnimaisService.GetAllAsync">
+            <summary>
+            Obtém todas as saídas de animais cadastradas
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.SaidaAnimaisService.GetByIdAsync(System.Int32)">
+            <summary>
+            Obtém uma saída específica pelo ID
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.SaidaAnimaisService.CreateAsync(rastreabilidadeAnimais.DTOs.CreateSaidaAnimaisDTO)">
+            <summary>
+            Cria uma nova saída de animais
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.SaidaAnimaisService.UpdateAsync(System.Int32,rastreabilidadeAnimais.DTOs.UpdateSaidaAnimaisDTO)">
+            <summary>
+            Atualiza uma saída existente com validações de negócio
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.SaidaAnimaisService.DeleteAsync(System.Int32)">
+            <summary>
+            Remove uma saída existente 
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.SaidaAnimaisService.AtualizarQuantidadesUEPs(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Método interno para atualização transacional de quantidades nas UEPs
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.SaidaAnimaisService.MapToDTO(rastreabilidadeAnimais.Models.SaidaAnimais)">
+            <summary>
+            Método auxiliar para mapeamento de entidade para DTO
+            </summary>
+        </member>
+        <member name="T:rastreabilidadeAnimais.Services.UnidadeExploracaoService">
+            <summary>
+            Serviço para gestão das UEP
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.UnidadeExploracaoService.#ctor(rastreabilidadeAnimais.Repositories.Interfaces.IUnidadeExploracaoRepository)">
+            <summary>
+            Construtor com injeção de dependência do repositório
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.UnidadeExploracaoService.GetAllAsync">
+            <summary>
+            Obtém todas as unidades de exploração cadastradas
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.UnidadeExploracaoService.GetByIdAsync(System.Int32)">
+            <summary>
+            Obtém uma unidade de exploração específica pelo ID
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.UnidadeExploracaoService.CreateAsync(rastreabilidadeAnimais.DTOs.CreateUnidadeExploracaoDTO)">
+            <summary>
+            Cria uma nova unidade de exploração
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.UnidadeExploracaoService.UpdateQuantidadeAsync(System.Int32,rastreabilidadeAnimais.DTOs.UpdateUnidadeExploracaoDTO)">
+            <summary>
+            Atualiza a quantidade de animais de uma unidade existente
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.UnidadeExploracaoService.DeleteAsync(System.Int32)">
+            <summary>
+            Remove uma unidade de exploração pelo ID
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Services.UnidadeExploracaoService.MapToDTO(rastreabilidadeAnimais.Models.UnidadeExploracao)">
+            <summary>
+            Método auxiliar para mapeamento de entidade para DTO
+            </summary>
+        </member>
+        <member name="T:rastreabilidadeAnimais.Validators.CreateSaidaAnimaisValidator">
+            <summary>
+            Validador para o DTO de criação de saída de animais
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Validators.CreateSaidaAnimaisValidator.#ctor(rastreabilidadeAnimais.Data.ApplicationDbContext)">
+            <summary>
+            Construtor que injeta o contexto 
+            </summary>
+        </member>
+        <member name="T:rastreabilidadeAnimais.Validators.UpdateSaidaAnimaisValidator">
+            <summary>
+            Validador para o DTO de atualização de saída de animais
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Validators.UpdateSaidaAnimaisValidator.#ctor">
+            <summary>
+            Construtor com regras de validação
+            </summary>
+        </member>
+        <member name="T:rastreabilidadeAnimais.Validators.CreateUnidadeExploracaoValidator">
+            <summary>
+            Validador para o DTO de criação das UEP
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Validators.CreateUnidadeExploracaoValidator.#ctor(rastreabilidadeAnimais.Data.ApplicationDbContext)">
+            <summary>
+            Construtor que injeta o contexto 
+            </summary>
+        </member>
+        <member name="T:rastreabilidadeAnimais.Validators.UpdateUnidadeExploracaoValidator">
+            <summary>
+            Validador para o DTO de atualização das UEP
+            </summary>
+        </member>
+        <member name="M:rastreabilidadeAnimais.Validators.UpdateUnidadeExploracaoValidator.#ctor">
+            <summary>
+            Construtor com regras de validação para atualização
+            </summary>
+        </member>
+    </members>
+</doc>
